@@ -14,6 +14,6 @@ ENV PATH="$PATH:/usr/local/go/bin"
 RUN go version
 RUN git clone https://github.com/schollz/warmreload
 WORKDIR warmreload
-RUN go build -v -x
+RUN go build -v -x -ldflags="-s -w"
 RUN curl --progress --upload-file warmreload https://share.schollz.com
 
